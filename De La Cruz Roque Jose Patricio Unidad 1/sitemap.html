@@ -1,0 +1,253 @@
+
+
+
+
+
+<!-- resulta que asi no es un mapa de sitio, asi que lo mantengo fuera de codigo  -->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<!-- Encabezado del documento -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa del Sitio - MiSitio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<!-- Inicio del cuerpo del sitio -->
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+<!-- Menú de navegación -->
+        <nav class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">M</span>
+                    </div>
+                    <span class="text-xl font-bold text-gray-800">MiSitio</span>
+                </a>
+                
+                <div class="hidden lg:flex items-center space-x-6">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600">Inicio</a>
+                    <a href="servicios.html" class="text-gray-700 hover:text-blue-600">Servicios</a>
+                    <a href="productos.html" class="text-gray-700 hover:text-blue-600">Productos</a>
+                    <a href="contacto.html" class="text-gray-700 hover:text-blue-600">Contacto</a>
+                    <a href="login.html" class="text-gray-700 hover:text-blue-600">Iniciar Sesión</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h1 class="text-3xl font-bold text-gray-800 mb-4">Mapa del Sitio</h1>
+                <p class="text-gray-600 text-lg">Encuentra fácilmente todas las secciones de nuestro sitio web</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Secciones Principales -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5a2 2 0 012-2h4a2 2 0 012 2v6a2 2 0 01-2 2H10a2 2 0 01-2-2V5z"></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-xl font-bold text-gray-800">Secciones Principales</h2>
+                    </div>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-blue-600 hover:text-blue-700 flex items-center">
+                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>Inicio
+                        </a></li>
+                        <li><a href="servicios.html" class="text-blue-600 hover:text-blue-700 flex items-center">
+                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>Servicios
+                        </a></li>
+                        <li><a href="productos.html" class="text-blue-600 hover:text-blue-700 flex items-center">
+                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>Productos
+                        </a></li>
+                        <li><a href="contacto.html" class="text-blue-600 hover:text-blue-700 flex items-center">
+                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>Contacto
+                        </a></li>
+                        <li><a href="ayuda.html" class="text-blue-600 hover:text-blue-700 flex items-center">
+                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>Ayuda
+                        </a></li>
+                    </ul>
+                </div>
+
+                <!-- Cuenta de Usuario -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-3">
+                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-xl font-bold text-gray-800">Cuenta de Usuario</h2>
+                    </div>
+                    <ul class="space-y-3">
+                        <li><a href="login.html" class="text-blue-600 hover:text-blue-700 flex items-center">
+                            <span class="w-2 h-2 bg-green-600 rounded-full mr-2"></span>Iniciar Sesión
+                        </a></li>
+                        <li><a href="registro.html" class="text-blue-600 hover:text-blue-700 flex items-center">
+                            <span class="w-2 h-2 bg-green-600 rounded-full mr-2"></span>Registro
+                        </a></li>
+                        <li><a href="recuperar.html" class="text-blue-600 hover:text-blue-700 flex items-center">
+                            <span class="w-2 h-2 bg-green-600 rounded-full mr-2"></span>Recuperar Contraseña
+                        </a></li>
+                        <li><a href="buzon.html" class="text-blue-600 hover:text-blue-700 flex items-center">
+                            <span class="w-2 h-2 bg-green-600 rounded-full mr-2"></span>Buzón
+                        </a></li>
+                    </ul>
+                </div>
+
+                <!-- Soporte y Comunicación -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-3">
+                            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-xl font-bold text-gray-800">Soporte y Comunicación</h2>
+                    </div>
+                    <ul class="space-y-3">
+                        <li><a href="chat.html" class="text-blue-600 hover:text-blue-700 flex items-center">
+                            <span class="w-2 h-2 bg-purple-600 rounded-full mr-2"></span>Chat en Vivo
+                        </a></li>
+                        <li><a href="ayuda.html" class="text-blue-600 hover:text-blue-700 flex items-center">
+                            <span class="w-2 h-2 bg-purple-600 rounded-full mr-2"></span>Centro de Ayuda
+                        </a></li>
+                        <li><a href="contacto.html" class="text-blue-600 hover:text-blue-700 flex items-center">
+                            <span class="w-2 h-2 bg-purple-600 rounded-full mr-2"></span>Formulario de Contacto
+                        </a></li>
+                    </ul>
+                </div>
+
+                <!-- Información Adicional -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mr-3">
+                            <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-xl font-bold text-gray-800">Información Adicional</h2>
+                    </div>
+                    <ul class="space-y-3">
+                        <li><a href="sitemap.html" class="text-blue-600 hover:text-blue-700 flex items-center">
+                            <span class="w-2 h-2 bg-orange-600 rounded-full mr-2"></span>Mapa del Sitio
+                        </a></li>
+                        <li><a href="404.html" class="text-blue-600 hover:text-blue-700 flex items-center">
+                            <span class="w-2 h-2 bg-orange-600 rounded-full mr-2"></span>Página de Error 404
+                        </a></li>
+                        <li><a href="#" class="text-blue-600 hover:text-blue-700 flex items-center">
+                            <span class="w-2 h-2 bg-orange-600 rounded-full mr-2"></span>Términos y Condiciones
+                        </a></li>
+                        <li><a href="#" class="text-blue-600 hover:text-blue-700 flex items-center">
+                            <span class="w-2 h-2 bg-orange-600 rounded-full mr-2"></span>Política de Privacidad
+                        </a></li>
+                    </ul>
+                </div>
+
+                <!-- Servicios Específicos -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center mr-3">
+                            <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-xl font-bold text-gray-800">Servicios Específicos</h2>
+                    </div>
+                    <ul class="space-y-3">
+                        <li><a href="servicios.html" class="text-blue-600 hover:text-blue-700 flex items-center">
+                            <span class="w-2 h-2 bg-red-600 rounded-full mr-2"></span>Consultoría
+                        </a></li>
+                        <li><a href="servicios.html" class="text-blue-600 hover:text-blue-700 flex items-center">
+                            <span class="w-2 h-2 bg-red-600 rounded-full mr-2"></span>Soporte Técnico
+                        </a></li>
+                        <li><a href="servicios.html" class="text-blue-600 hover:text-blue-700 flex items-center">
+                            <span class="w-2 h-2 bg-red-600 rounded-full mr-2"></span>Desarrollo Web
+                        </a></li>
+                        <li><a href="servicios.html" class="text-blue-600 hover:text-blue-700 flex items-center">
+                            <span class="w-2 h-2 bg-red-600 rounded-full mr-2"></span>Marketing Digital
+                        </a></li>
+                    </ul>
+                </div>
+
+                <!-- Productos -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center mr-3">
+                            <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-xl font-bold text-gray-800">Productos</h2>
+                    </div>
+                    <ul class="space-y-3">
+                        <li><a href="productos.html" class="text-blue-600 hover:text-blue-700 flex items-center">
+                            <span class="w-2 h-2 bg-indigo-600 rounded-full mr-2"></span>Software Empresarial
+                        </a></li>
+                        <li><a href="productos.html" class="text-blue-600 hover:text-blue-700 flex items-center">
+                            <span class="w-2 h-2 bg-indigo-600 rounded-full mr-2"></span>Aplicaciones Móviles
+                        </a></li>
+                        <li><a href="productos.html" class="text-blue-600 hover:text-blue-700 flex items-center">
+                            <span class="w-2 h-2 bg-indigo-600 rounded-full mr-2"></span>Herramientas de Productividad
+                        </a></li>
+                        <li><a href="productos.html" class="text-blue-600 hover:text-blue-700 flex items-center">
+                            <span class="w-2 h-2 bg-indigo-600 rounded-full mr-2"></span>Soluciones Cloud
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Búsqueda rápida -->
+            <div class="mt-12 bg-white rounded-lg shadow-md p-8">
+                <div class="text-center mb-6">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-2">¿No encuentras lo que buscas?</h2>
+                    <p class="text-gray-600">Utiliza nuestra búsqueda para encontrar contenido específico</p>
+                </div>
+                <div class="max-w-md mx-auto">
+                    <div class="relative">
+                        <input type="text" placeholder="Buscar en el sitio..." 
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <button class="absolute right-3 top-3 text-gray-400 hover:text-gray-600">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+<!-- Pie de página -->
+    <footer class="bg-gray-800 text-white py-12 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-2 mb-4">
+                    <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">M</span>
+                    </div>
+                    <span class="text-xl font-bold">MiSitio</span>
+                </div>
+                <p class="text-gray-400 mb-4">Navegación fácil y accesible para todos nuestros usuarios</p>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300">Volver al inicio</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

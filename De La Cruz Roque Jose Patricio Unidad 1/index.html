@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Encabezado del documento -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PatoServices - Inicio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<!-- Inicio del cuerpo del sitio -->
+<body class="bg-gray-50">
+    <!-- Header con navegación -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <span id="usuario-nombre" class="text-gray-600 text-sm ml-4"></span>
+<!-- Menú de navegación -->
+        <nav class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">P</span>
+                    </div>
+                    <span class="text-xl font-bold text-gray-800">PatoServices</span>
+                </div>
+
+                <!-- Barra de búsqueda (desktop) -->
+                <div class="hidden md:flex flex-1 max-w-md mx-8">
+                    <div class="relative w-full">
+                        <input type="text" id="busqueda-input" name="q" id="busqueda-input-m" name="q" placeholder="Buscar..." 
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <button class="absolute right-2 top-2 text-gray-400 hover:text-gray-600">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Navegación desktop -->
+                <div class="hidden lg:flex items-center space-x-6">
+                    <a href="index.html" class="text-blue-600 font-medium">Inicio</a>
+                    <!-- <a href="servicios.html" class="text-gray-700 hover:text-blue-600">Servicios</a> -->
+                    <a href="chat.html" class="text-gray-700 hover:text-blue-600">chat y sugerencias</a>
+                    <a href="contacto.html" class="text-gray-700 hover:text-blue-600">Contacto</a>
+                    <a href="ayuda.html" class="text-gray-700 hover:text-blue-600">Ayuda</a>
+                    <div class="flex items-center space-x-3">
+                        <a href="logout.php" id="logout-link" class="text-red-600 font-medium hidden">Cerrar sesión</a>
+                        <a href="login.html" id="login-link" class="text-gray-700 hover:text-blue-600">Iniciar Sesión</a>
+                        <a href="registro.html" id="registro-link" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Registro</a>
+                    </div>
+                </div>
+
+                <!-- Botón menú móvil -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Menú móvil -->
+            <div id="mobile-menu" class="lg:hidden hidden mt-4 pb-4">
+                <!-- Barra de búsqueda móvil -->
+                <div class="mb-4">
+                    <div class="relative">
+                        <input type="text" placeholder="Buscar..." 
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                        <button class="absolute right-2 top-2 text-gray-400">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col space-y-3">
+                    <a href="index.html" class="text-blue-600 font-medium py-2">Inicio</a>
+                    <a href="servicios.html" class="text-gray-700 hover:text-blue-600 py-2">Servicios</a>
+                    <a href="productos.html" class="text-gray-700 hover:text-blue-600 py-2">Productos</a>
+                    <a href="contacto.html" class="text-gray-700 hover:text-blue-600 py-2">Contacto</a>
+                    <a href="ayuda.html" class="text-gray-700 hover:text-blue-600 py-2">Ayuda</a>
+                    <a href="sitemap.html" class="text-gray-700 hover:text-blue-600 py-2">Mapa del Sitio</a>
+                    <a href="chat.html" class="text-gray-700 hover:text-blue-600 py-2">Chat</a>
+                    <hr class="my-3">
+                    <a href="login.html" class="text-gray-700 hover:text-blue-600 py-2">Iniciar Sesión</a>
+                    <a href="registro.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 text-center">Registro</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Hero Section -->
+        <section class="text-center py-16">
+            <h1 class="text-4xl md:text-6xl font-bold text-gray-800 mb-6">
+                Bienvenido a <span class="text-blue-600">PatoServices</span>
+            </h1>
+            <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                Tu plataforma integral para servicios y productos de calidad. 
+                Descubre todo lo que tenemos para ofrecerte.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="servicios.html" class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 font-medium">
+                    Ver Servicios
+                </a>
+                <a href="productos.html" class="border border-blue-600 text-blue-600 px-8 py-3 rounded-lg hover:bg-blue-50 font-medium">
+                    Ver Productos
+                </a>
+            </div>
+        </section>
+
+        <!-- Secciones principales -->
+        <section class="grid md:grid-cols-3 gap-8 py-16">
+            <div class="text-center p-6 bg-white rounded-lg shadow-md">
+                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Servicios Rápidos</h3>
+                <p class="text-gray-600">Ofrecemos servicios de alta calidad con tiempos de respuesta excepcionales.</p>
+            </div>
+            
+            <div class="text-center p-6 bg-white rounded-lg shadow-md">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Calidad Garantizada</h3>
+                <p class="text-gray-600">Todos nuestros productos y servicios cuentan con garantía de satisfacción.</p>
+            </div>
+            
+            <div class="text-center p-6 bg-white rounded-lg shadow-md">
+                <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 2.25a9.75 9.75 0 100 19.5 9.75 9.75 0 000-19.5z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Soporte 24/7</h3>
+                <p class="text-gray-600">Nuestro equipo está disponible las 24 horas para ayudarte cuando lo necesites.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+<!-- Pie de página -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-lg">P</span>
+                        </div>
+                        <span class="text-xl font-bold">PatoServices</span>
+                    </div>
+                    <p class="text-gray-400">Tu plataforma de confianza para servicios y productos de calidad.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Enlaces Rápidos</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="index.html" class="hover:text-white">Inicio</a></li>
+                        <li><a href="servicios.html" class="hover:text-white">Servicios</a></li>
+                        <li><a href="productos.html" class="hover:text-white">Productos</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Soporte</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="ayuda.html" class="hover:text-white">Ayuda</a></li>
+                        <li><a href="contacto.html" class="hover:text-white">Contacto</a></li>
+                        <li><a href="chat.html" class="hover:text-white">Chat</a></li>
+                        <li><a href="recuperar.html" class="hover:text-white">Recuperar Contraseña</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Cuenta</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="login.html" class="hover:text-white">Iniciar Sesión</a></li>
+                        <li><a href="registro.html" class="hover:text-white">Registro</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="my-8 border-gray-700">
+            <div class="text-center text-gray-400">
+                <p>&copy; 2025 PatoServices. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+<script>
+fetch("usuario.php")
+  .then(res => res.json())
+  .then(data => {
+    if (data.logeado) {
+      const target = document.getElementById("usuario-nombre")
+      if (target) target.textContent = "Hola, " + data.nombre
+    }
+  })
+</script>
+
+
+<script>
+fetch("usuario.php")
+  .then(res => res.json())
+  .then(data => {
+    if (data.logeado) {
+      const nombreSpan = document.getElementById("usuario-nombre")
+      if (nombreSpan) nombreSpan.textContent = "Hola, " + data.nombre
+
+      document.getElementById("logout-link")?.classList.remove("hidden")
+      document.getElementById("login-link")?.classList.add("hidden")
+      document.getElementById("registro-link")?.classList.add("hidden")
+    }
+  })
+  .catch(err => {
+    console.error("Error al obtener usuario:", err)
+  })
+</script>
+
+
+<style>
+  #sugerencias {
+    position: absolute;
+    z-index: 50;
+    background: white;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 0 0 0.5rem 0.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+
+  #sugerencias div {
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+
+  #sugerencias div:hover {
+    background-color: #f3f4f6;
+  }
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const input = document.getElementById("busqueda-input")
+  if (!input) return
+
+  const contenedor = document.createElement("div")
+  contenedor.id = "sugerencias"
+  input.parentNode.style.position = "relative"
+  input.parentNode.appendChild(contenedor)
+
+  input.addEventListener("input", function () {
+    const q = this.value.trim()
+    contenedor.innerHTML = ""
+    if (q.length < 2) return
+
+    fetch(`buscar.php?q=${encodeURIComponent(q)}`)
+      .then(res => res.json())
+      .then(data => {
+        data.forEach(item => {
+          const div = document.createElement("div")
+          div.textContent = item.nombre
+          div.addEventListener("click", () => {
+            window.location.href = item.url
+          })
+          contenedor.appendChild(div)
+        })
+      })
+  })
+
+  document.addEventListener("click", function (e) {
+    if (!input.contains(e.target) && !contenedor.contains(e.target)) {
+      contenedor.innerHTML = ""
+    }
+  })
+})
+</script>
+
+
+
+
+</body>
+
+</html>

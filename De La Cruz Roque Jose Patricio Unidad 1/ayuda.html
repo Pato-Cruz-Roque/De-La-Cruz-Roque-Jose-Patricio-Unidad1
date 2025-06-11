@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Ayuda - PatoServices</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+<!-- Menú de navegación -->
+        <nav class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">P</span>
+                    </div>
+                    <span class="text-xl font-bold text-gray-800">PatoServices</span>
+                </a>
+                
+                <div class="hidden lg:flex items-center space-x-6">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600">Inicio</a>
+                    <a href="servicios.html" class="text-gray-700 hover:text-blue-600">Servicios</a>
+                    <a href="productos.html" class="text-gray-700 hover:text-blue-600">Productos</a>
+                    <a href="contacto.html" class="text-gray-700 hover:text-blue-600">Contacto</a>
+                    <a href="ayuda.html" class="text-blue-600 font-medium">Ayuda</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="text-center mb-12">
+            <h1 class="text-3xl font-bold text-gray-800 mb-4">Centro de Ayuda</h1>
+            <p class="text-gray-600 text-lg">Encuentra respuestas a las preguntas más frecuentes</p>
+        </div>
+
+        <!-- Búsqueda de ayuda lo comento por que no cuadra busqueda en esta seccion, o almenos no aun.  -->
+        <!-- <div class="max-w-2xl mx-auto mb-12">
+            <div class="relative">
+                <input type="text" placeholder="¿En qué podemos ayudarte?" 
+                       class="w-full px-6 py-4 text-lg border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                <button class="absolute right-4 top-4 text-gray-400 hover:text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div> -->
+
+        <!-- Categorías de ayuda -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-gray-800 mb-2">Preguntas Frecuentes</h3>
+                <p class="text-gray-600 mb-4">Respuestas a las consultas más comunes de nuestros usuarios.</p>
+                <a href="#" class="text-blue-600 hover:text-blue-700 font-medium">Ver FAQ →</a>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-gray-800 mb-2">Guías y Tutoriales</h3>
+                <p class="text-gray-600 mb-4">Aprende paso a paso cómo usar nuestros productos y servicios.</p>
+                <a href="#" class="text-blue-600 hover:text-blue-700 font-medium">Ver guías →</a>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 2.25a9.75 9.75 0 100 19.5 9.75 9.75 0 000-19.5z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-gray-800 mb-2">Soporte Técnico</h3>
+                <p class="text-gray-600 mb-4">Obtén ayuda especializada para problemas técnicos específicos.</p>
+                <a href="contacto.html" class="text-blue-600 hover:text-blue-700 font-medium">Contactar soporte →</a>
+            </div>
+        </div>
+
+        <!-- Contacto directo -->
+        <div class="bg-white rounded-lg shadow-md p-8 text-center">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">¿No encuentras lo que buscas?</h2>
+            <p class="text-gray-600 mb-6">Nuestro equipo está aquí para ayudarte</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="chat.html" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 font-medium">
+                    Chat 
+                </a>
+                <a href="contacto.html" class="border border-blue-600 text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-50 font-medium">
+                    Enviar correo
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

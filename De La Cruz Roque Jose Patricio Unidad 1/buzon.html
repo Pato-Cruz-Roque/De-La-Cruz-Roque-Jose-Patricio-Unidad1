@@ -1,0 +1,134 @@
+<!-- la seccion  de buzon he decidido dejarla inhabilitada por que al final implemente otro sistema de buzon, pero me da cosita borrarla :U -->
+
+
+
+
+<!-- Declaración del tipo de documento HTML -->
+<!DOCTYPE html>
+<!-- Inicio del documento HTML -->
+<html lang="es">
+<!-- Encabezado del documento -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buzón - MiSitio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<!-- Inicio del cuerpo del sitio -->
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+<!-- Menú de navegación -->
+        <nav class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">M</span>
+                    </div>
+                    <span class="text-xl font-bold text-gray-800">MiSitio</span>
+                </a>
+                
+                <div class="hidden lg:flex items-center space-x-6">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600">Inicio</a>
+                    <a href="buzon.html" class="text-blue-600 font-medium">Buzón</a>
+                    <a href="contacto.html" class="text-gray-700 hover:text-blue-600">Contacto</a>
+                    <a href="login.html" class="text-gray-700 hover:text-blue-600">Cerrar Sesión</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex items-center justify-between mb-8">
+                <h1 class="text-3xl font-bold text-gray-800">Mi Buzón</h1>
+                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                    Nuevo Mensaje
+                </button>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md">
+                <!-- Filtros -->
+                <div class="border-b p-4">
+                    <div class="flex flex-wrap gap-2">
+                        <button class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm">Todos</button>
+                        <button class="bg-gray-100 text-gray-700 px-4 py-2 rounded-lg text-sm hover:bg-gray-200">No leídos</button>
+                        <button class="bg-gray-100 text-gray-700 px-4 py-2 rounded-lg text-sm hover:bg-gray-200">Importantes</button>
+                        <button class="bg-gray-100 text-gray-700 px-4 py-2 rounded-lg text-sm hover:bg-gray-200">Enviados</button>
+                    </div>
+                </div>
+
+                <!-- Lista de mensajes -->
+                <div class="divide-y">
+                    <!-- Mensaje 1 -->
+                    <div class="p-4 hover:bg-gray-50 cursor-pointer">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-3 h-3 bg-blue-600 rounded-full"></div>
+                                <div>
+                                    <h3 class="font-medium text-gray-800">Bienvenido a MiSitio</h3>
+                                    <p class="text-sm text-gray-600">Gracias por registrarte. Aquí tienes información importante...</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-sm text-gray-500">Hace 2 horas</p>
+                                <span class="inline-block w-2 h-2 bg-blue-600 rounded-full"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mensaje 2 -->
+                    <div class="p-4 hover:bg-gray-50 cursor-pointer">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-3 h-3 bg-gray-300 rounded-full"></div>
+                                <div>
+                                    <h3 class="font-medium text-gray-800">Actualización de servicios</h3>
+                                    <p class="text-sm text-gray-600">Hemos actualizado nuestros términos de servicio...</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-sm text-gray-500">Ayer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mensaje 3 -->
+                    <div class="p-4 hover:bg-gray-50 cursor-pointer">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-3 h-3 bg-gray-300 rounded-full"></div>
+                                <div>
+                                    <h3 class="font-medium text-gray-800">Respuesta a tu consulta</h3>
+                                    <p class="text-sm text-gray-600">Hola, gracias por contactarnos. En respuesta a tu consulta...</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-sm text-gray-500">3 días</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paginación -->
+                <div class="border-t p-4">
+                    <div class="flex items-center justify-between">
+                        <p class="text-sm text-gray-600">Mostrando 1-3 de 3 mensajes</p>
+                        <div class="flex space-x-2">
+                            <button class="px-3 py-1 border border-gray-300 rounded text-sm text-gray-500" disabled>
+                                Anterior
+                            </button>
+                            <button class="px-3 py-1 border border-gray-300 rounded text-sm text-gray-500" disabled>
+                                Siguiente
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

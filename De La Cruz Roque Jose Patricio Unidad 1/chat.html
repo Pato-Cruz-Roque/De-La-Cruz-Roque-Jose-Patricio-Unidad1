@@ -1,0 +1,251 @@
+<!-- Declaración del tipo de documento HTML -->
+<!DOCTYPE html>
+<!-- Inicio del documento HTML -->
+<html lang="es">
+<!-- Encabezado del documento -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chat  - PatoServices</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<!-- Inicio del cuerpo del sitio -->
+<body class="bg-gray-50">
+
+  <!-- Header -->
+  <header class="bg-white shadow-sm">
+<!-- Menú de navegación -->
+    <nav class="container mx-auto px-4 py-3">
+      <div class="flex items-center justify-between">
+        <a href="index.html" class="flex items-center space-x-2">
+          <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+            <span class="text-white font-bold text-lg">P</span>
+          </div>
+          <span class="text-xl font-bold text-gray-800">PatoServices</span>
+        </a>
+        <a href="ayuda.html" class="text-blue-600 hover:text-blue-700">Volver a Ayuda</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main class="container mx-auto px-4 py-8">
+    <!-- Vista usuario -->
+    <div id="vista-usuario" class="max-w-4xl mx-auto hidden">
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <div class="bg-blue-600 text-white p-4">
+          <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+              </svg>
+            </div>
+            <div>
+              <h2 class="font-bold">Soporte PatoServices</h2>
+              <p class="text-blue-100 text-sm">En línea - Tiempo de respuesta: ~2 min</p>
+            </div>
+          </div>
+        </div>
+        <div class="h-96 p-4 overflow-y-auto bg-gray-50">
+          <div id="area-usuario" class="space-y-3 text-sm text-gray-700">
+            <p class="text-center text-gray-400">Cargando mensajes...</p>
+          </div>
+        </div>
+        <div class="border-t p-4">
+<!-- Formulario de entrada del usuario -->
+          <form id="form-usuario" class="flex space-x-3">
+            <input type="text" placeholder="Escribe tu mensaje..."
+                   class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
+            <button type="submit"
+                    class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vista admin -->
+    <div id="vista-admin" class="hidden h-[600px] bg-white rounded-lg shadow-md overflow-hidden flex">
+      <aside class="w-1/3 border-r p-4 bg-gray-50 overflow-y-auto">
+        <h2 class="text-lg font-bold text-gray-700 mb-4">Chats Recibidos</h2>
+        <ul id="lista-chats" class="space-y-2"></ul>
+      </aside>
+      <div class="flex-1 flex flex-col">
+        <div class="p-4 border-b bg-blue-600 text-white">
+          <h3 id="titulo-chat" class="font-bold text-lg">Selecciona un chat</h3>
+          <p id="subtitulo-chat" class="text-sm text-blue-100"></p>
+        </div>
+        <div id="area-mensajes" class="flex-1 p-4 overflow-y-auto space-y-4 bg-gray-50">
+          <p class="text-gray-400 text-sm text-center">Selecciona un chat para comenzar</p>
+        </div>
+<!-- Formulario de entrada del usuario -->
+        <form id="form-admin" class="border-t p-4 flex gap-2 hidden">
+          <input type="text" id="mensaje-admin" placeholder="Escribe una respuesta..."
+                 class="flex-1 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500" />
+          <button class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700" type="submit">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- SCRIPT -->
+  <script>
+    let chatActivoId = null
+
+    fetch("usuario.php")
+      .then(res => res.json())
+      .then(data => {
+        if (!data.logeado) {
+          window.location.href = "login.html"
+          return
+        }
+
+        if (data.email === "admin@gmail.com") {
+          document.getElementById("vista-admin")?.classList.remove("hidden")
+          document.getElementById("vista-usuario")?.classList.add("hidden")
+          cargarListaDeChats()
+        } else {
+          document.getElementById("vista-usuario")?.classList.remove("hidden")
+          cargarMensajesUsuario()
+        }
+      })
+
+    function cargarListaDeChats() {
+      fetch("chat.php")
+        .then(res => res.json())
+        .then(data => {
+          const lista = document.getElementById("lista-chats")
+          lista.innerHTML = ""
+          data.usuarios.forEach(u => {
+            const li = document.createElement("li")
+            li.className = "p-3 bg-white rounded shadow hover:bg-gray-100 cursor-pointer"
+            li.textContent = u.correo || `Usuario ${u.usuario_id}`
+            li.addEventListener("click", () => cargarMensajes(u.usuario_id, u.correo))
+            lista.appendChild(li)
+          })
+        })
+    }
+
+    function cargarMensajes(usuarioId, correo = "") {
+      chatActivoId = usuarioId
+      fetch(`chat_usuario.php?usuario_id=${usuarioId}`)
+        .then(res => res.json())
+        .then(data => {
+          const area = document.getElementById("area-mensajes")
+          area.innerHTML = ""
+          document.getElementById("form-admin").classList.remove("hidden")
+          document.getElementById("titulo-chat").textContent = `Conversación con ${correo || 'usuario ' + usuarioId}`
+
+          if (data.error) {
+            area.innerHTML = `<p class="text-center text-red-500">${data.error}</p>`
+            return
+          }
+
+          if (data.length === 0) {
+            area.innerHTML = `<p class="text-center text-gray-500">No hay mensajes aún.</p>`
+            return
+          }
+
+          data.forEach(msg => {
+            const bubble = document.createElement("div")
+            bubble.className = "max-w-lg rounded px-4 py-2 shadow"
+
+            if (msg.asunto === "respuesta_admin") {
+              bubble.classList.add("bg-blue-100", "ml-auto", "text-right")
+            } else {
+              bubble.classList.add("bg-white", "mr-auto")
+            }
+
+            bubble.innerHTML = `
+              <p class="text-sm text-gray-800">${msg.mensaje}</p>
+              <p class="text-xs text-gray-500">${msg.fecha}</p>
+            `
+            area.appendChild(bubble)
+          })
+
+          area.scrollTop = area.scrollHeight
+        })
+    }
+
+    document.getElementById("form-admin")?.addEventListener("submit", function (e) {
+      e.preventDefault()
+      const input = document.getElementById("mensaje-admin")
+      const mensaje = input.value.trim()
+      if (!mensaje || !chatActivoId) return
+
+      const formData = new FormData()
+      formData.append("mensaje", mensaje)
+      formData.append("usuario_id", chatActivoId)
+
+      fetch("responder_admin.php", {
+        method: "POST",
+        body: formData
+      })
+        .then(res => res.text())
+        .then(resp => {
+          if (resp === "ok") {
+            input.value = ""
+            cargarMensajes(chatActivoId)
+          } else {
+            alert("Error al enviar el mensaje")
+          }
+        })
+    })
+
+    document.getElementById("form-usuario")?.addEventListener("submit", function (e) {
+      e.preventDefault()
+      const input = this.querySelector("input[type='text']")
+      const mensaje = input.value.trim()
+      if (!mensaje) return
+
+      const formData = new FormData()
+      formData.append("mensaje", mensaje)
+
+      fetch("enviar_mensaje.php", {
+        method: "POST",
+        body: formData
+      })
+        .then(res => res.text())
+        .then(resp => {
+          if (resp === "ok") {
+            input.value = ""
+            cargarMensajesUsuario()
+          } else {
+            alert("Error al enviar el mensaje")
+          }
+        })
+    })
+
+    function cargarMensajesUsuario() {
+      fetch("mis_mensajes.php")
+        .then(res => res.json())
+        .then(data => {
+          const area = document.getElementById("area-usuario")
+          area.innerHTML = ""
+          data.forEach(msg => {
+            const div = document.createElement("div")
+            div.className = "max-w-md p-2 rounded shadow"
+
+             if (msg.asunto === "mensaje") {
+          // mensaje del usuario (a la derecha)
+          div.classList.add("bg-blue-100", "text-right", "ml-auto")
+        } else {
+          // respuesta del admin (a la izquierda)
+          div.classList.add("bg-white", "mr-auto")
+        }
+
+            div.innerHTML = `<p>${msg.mensaje}</p><p class="text-xs text-gray-500">${msg.fecha}</p>`
+            area.appendChild(div)
+          })
+        })
+    }
+  </script>
+
+</body>
+</html>
